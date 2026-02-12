@@ -135,7 +135,7 @@ function share() {
         objectType: 'feed',
         content: {
             title: '🔥 이번 주 길드 이벤트 당첨자 🔥',
-            description: `축하합니다! 당첨자: ${winners}`,
+            description: `축하합니다!\n당첨자: ${winners}`,
             imageUrl: fullImageUrl,
             link: {
                 mobileWebUrl: currentUrl, // 모바일용 주소
