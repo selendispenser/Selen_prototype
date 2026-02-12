@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>길드 수로/플래그 추첨기</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h1>🏆 길드 이벤트 추첨기</h1>
+
+        <div class="admin-controls">
+            <input type="text" id="nameInput" placeholder="신규 인원 이름 입력">
+            <button class="btn btn-add" onclick="addMember()">등록</button>
+        </div>
+
+        <div class="list-header">
+            <span id="statText">참여 예정: 0명</span>
+            <div class="header-btns">
+                <button onclick="toggleAll(true)">전체 선택</button>
+                <button onclick="toggleAll(false)">해제</button>
+            </div>
+        </div>
+
+        <div id="memberList" class="member-container">
+            </div>
+
+        <div class="actions">
+            <button class="btn btn-primary" onclick="draw()">2명 랜덤 추첨</button>
+            <button class="btn btn-sync" onclick="forceSyncWithJSON()">JSON 명단 동기화</button>
+            <button class="btn btn-kakao" id="kakaoBtn" onclick="share()" style="display: none;">카톡 결과 전송</button>
+        </div>
+
+        <div id="result-display">
+            <div class="result-header">✨ 이번 주 당첨자 ✨</div>
+            <div id="winnerNames" class="winner-name"></div>
+            <p class="result-footer">축하드립니다!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
